@@ -1,0 +1,72 @@
+<% include partials/nav.ejs %>
+<!--SideNav Finished-->
+<div class="form_container card blue-white darken-1">
+  <div class="row">
+    <form class="col s12" method="POST" id="from4">
+      <h5>FILL THIS FORM TO POST YOUR REQUEST</h5>
+      <div class="divider"></div><br>
+      <div class="row">
+        <div class="input-field col s6">
+          <input type="text" name="first_name" required placeholder="First name" required>
+        </div>
+        <div class="input-field col s6">
+          <input type="text" name="last_name" required placeholder="Last name" required>
+        </div>
+      </div>
+      <div class="row">
+        <select class="browser-default" name="service">
+          <option value="" disabled selected>Select Service</option>
+          <option value="Service 1">Service 1</option>
+          <option value="Service 2">Service 2</option>
+          <option value="Service 3">Service 3</option>
+        </select>
+      </div>
+      <div class="row">
+        <input type="text" name="phone" required placeholder="Phone" required>
+      </div>
+
+      <div class="input-field col s12">
+        <input type="text" name="address" required placeholder="Address" required>
+      </div>
+      <div class="row">
+        <input type="text" name="city" placeholder="City" required>
+      </div>
+      <!--
+                <div class="file-field input-field">
+                    <div class="btn grey">
+                      <span>Photos</span>
+                      <input name="file" type="file">
+                    </div>
+                    <div class="file-path-wrapper">
+                      <input class="file-path validate"  type="text" required>
+                    </div>
+                  </div> 
+      -->
+      <button class="btn waves-effect waves-light btn-large " type="submit" name="action">Submit
+        <i class="material-icons right">send</i>
+      </button>
+    </form>
+  </div>
+
+</div>
+
+
+
+<!--Some Scripts-->
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/materialize.min.js"></script>
+<script>
+  $(document).ready(function () {
+    // Custom JS & jQuery here
+    $('.button-collapse').sideNav();
+  });
+  //jquery for select
+  $(document).ready(function () {
+    $('select').material_select();
+  });
+
+</script>
+
+</body>
+
+</html>

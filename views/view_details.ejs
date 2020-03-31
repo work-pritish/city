@@ -1,0 +1,23 @@
+<% if (op) { %>
+    <% include partials/edit.ejs %>
+    <%} else { %>
+    <% include partials/search_nav.ejs %>
+    <% } %>
+    <div class="row form_container card blue-white darken-1">
+        <a href="/search_page" class="btn black"> BACK </a>
+        <br><br><br><br>  
+         <h5>Provider's name : <%= obj.first_name %> <%=obj.last_name %></h5>
+          <h5>Service : <%= obj.service %></h5>
+          <h5>Address : <%= obj.address %>, <%= obj.city %></h5>
+          <h5>Phone : <%= obj.phone %></h5>
+    </div>
+    <script type="text/javascript" src="/js/jquery.js"></script>
+<script type="text/javascript" src="/js/materialize.min.js"></script>
+<script>
+  $(document).ready(function () {
+    $('.button-collapse').sideNav();
+  });
+</script>
+</body>
+
+</html>

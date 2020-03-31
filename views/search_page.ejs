@@ -1,0 +1,58 @@
+<% if (op) { %>
+<% include partials/nav.ejs %>
+<%} else { %>
+<% include partials/search_nav.ejs %>
+<% } %>
+<div class="row form_container card blue-white darken-1">
+  <form method="POST">
+    <input type="text" placeholder="Service" name="service"><input type="text" placeholder="city" name="city">
+    <button type="submit" class="btn black">Search</button>
+  </form>
+</div>
+<div class="row form_container card blue-white darken-1">
+  <div class="row">
+      <% for(var i=0; i < form.length; i++) { %>
+    <div class="col s12 m4">
+      <div class="card">
+        <div class="card-image">
+          <img src="css/images/wal2.jpg">
+          <span class="card-title"><%= form[i].service %></span>
+        </div>
+        <div class="card-content">
+          <p><%= form[i].address %></p>
+          <p><%= form[i].city %></p>
+        </div>
+        <div class="card-action">
+          <button class="btn btn-view" data-id='<%= form[i].id %>'>view details</button>
+        </div>
+      </div>
+    </div>
+    <% } %>
+  </div>
+  </div>
+
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/materialize.min.js"></script>
+<script>
+  $(document).ready(function () {
+    // Custom JS & jQuery here
+    $('.button-collapse').sideNav();
+  });
+
+   //jQuery for view details
+   $(document).ready(() => {
+  $('.btn-view').on('click', e => {
+    console.log("btn clicked");
+    let target = $(e.target);
+    const id = target.attr('data-id');
+    $.ajax({
+      type: 'get',
+      url: `/view_details/${id}`,
+      success: res => location.href =`/view_details/${id}` 
+    });
+  });
+});
+</script>
+</body>
+
+</html>

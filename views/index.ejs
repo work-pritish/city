@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<title>New in the city</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="css/reqcss.css">
+<link rel="stylesheet" href="css/font.css">
+<link rel="stylesheet" href="css/site.css">
+<style>
+body,h1,h2,h3,h4,h5 {font-family: "Poppins", sans-serif}
+body {font-size:20px;
+color:white;}
+.w3-half img{margin-bottom:-6px;margin-top:16px;opacity:0.8;cursor:pointer}
+.w3-half img:hover{opacity:1}
+</style>
+
+<body>
+
+<!-- Sidebar/menu -->
+<nav class="w3-sidebar w3-black w3-collapse w3-top w3-large w3-padding" style="z-index:3;width:300px;font-weight:bold;" id="mySidebar"><br>
+  <a href="javascript:void(0)" onclick="w3_close()" class="w3-button w3-hide-large w3-display-topleft" style="width:100%;font-size:22px">Close</a>
+  <div class="w3-container">
+    <h3 class="w3-padding-64"><b>NEW IN THE CITY ?</b></h3>
+  </div>
+  <div class="w3-bar-block">
+    <a href="#" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Home</a> 
+    <a href="#services" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Services</a> 
+    <a href="#testing" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Android app</a> 
+    <a href="#designers" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">About</a> 
+    <a href="#contact" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Contact</a>
+  
+  </div>
+</nav>
+
+<!-- Top menu on small screens -->
+<header class="w3-container w3-top w3-hide-large w3-black w3-xlarge w3-padding">
+  <a href="javascript:void(0)" class="w3-button w3-black w3-margin-right" onclick="w3_open()">&#9776;</a>
+  <span>NEW IN THE CITY ?</span>
+</header>
+
+<!-- Overlay effect when opening sidebar on small screens -->
+<div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close" id="myOverlay"></div>
+
+<!-- !PAGE CONTENT! -->
+<div class="w3-main" style="margin-left:340px;margin-right:40px">
+
+  <!-- Header -->
+  <div class="w3-container" style="margin-top:80px" id="showcase">
+    <h1 id="top_header"><b>NEW IN THE CITY ?</b></h1>
+    <br><br>
+    <h3 id="description">Welcome to the city services !! here you will find all the services as you desire. In this platform you can start your own business by giving your own services . </h3>
+    
+    <!--Image Slider-->
+    <div>
+      <div class="slider">
+        <figure>
+            <div class="slide"><img src="css/images/back10.jpg" alt=""></div>
+            <div class="slide"><img src="css/images/back3.jpg" alt=""></div>
+            <div class="slide"><img src="css/images/back4.jpg" alt=""></div>
+            <div class="slide"><img src="css/images/back5.jpg" alt=""></div>
+        </figure>
+    </div>
+    </div>
+    <br><br>
+    <h1 class="w3-xxlarge w3-text-white" id="services"><b>SERVICES.</b></h1>
+    <hr style="width:50px;border:5px solid rgb(255, 255, 255)" class="w3-round">
+  </div>
+  
+  <!-- Photo grid (modal) -->
+  <div class="w3-row-padding">
+    <div class="w3-half">
+      <img src="css/images/back12.jpg" style="width:100%" onclick="search()">
+      <img src="css/images/back12.jpg" alter="PUT MORE SERVICES" style="width:100%" onclick="search()">
+    </div>
+
+    <div class="w3-half">
+      <img src="css/images/back2.jpg" style="width:100%" onclick="loginlink()">
+      <img src="css/images/back2.jpg" alter="PUT MORE SERVICES" style="width:100%" onclick="loginlink()">
+    </div>
+  </div>
+
+  <!-- Modal for full size images on click-->
+  <div id="modal01" class="w3-modal w3-black" style="padding-top:0" onclick="this.style.display='none'">
+    <span class="w3-button w3-black w3-xxlarge w3-display-topright">&times;</span>
+    <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
+      <img id="img01" class="w3-image">
+      <p id="caption"></p>
+    </div>
+  </div>
+
+  <!-- Our android app -->
+  <div class="w3-container" style="margin-top:75px">
+    <h1 class="w3-xxlarge w3-text-white"><b>Our android app.</b></h1>
+    <hr style="width:50px;border:5px solid rgb(255, 255, 255)" class="w3-round">
+    Download our android app<br><br>
+    <div id="testing"><img src="css/images/animg.jpg" class="w3-image"></div>
+  </div>
+  
+  <!-- ABOUT -->
+  <div class="w3-container" id="designers" style="margin-top:75px">
+    <h1 class="w3-xxlarge w3-text-white"><b>ABOUT.</b></h1>
+    <hr style="width:50px;border:5px solid rgb(255, 255, 255)" class="w3-round">
+    <p>The best team in the world.</p>
+    <p>We are lorem ipsum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
+    dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor
+    incididunt ut labore et quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+    </p>
+    <p><b>Our designers are thoughtfully chosen</b>:</p>
+  </div>
+
+  <!-- The Team -->
+  <div class="w3-row-padding w3-grayscale">
+    <div class="w3-col m4 w3-margin-bottom">
+      <div class="w3-light-grey">
+        <div class="w3-container">
+          <h3>Member</h3>
+          <p class="w3-opacity">--</p>
+          <p>NEELAM</p>
+        </div>
+      </div>
+    </div>
+    <div class="w3-col m4 w3-margin-bottom">
+      <div class="w3-light-grey">
+        <div class="w3-container">
+          <h3>Member</h3>
+          <p class="w3-opacity">--</p>
+          <p>Pritish</p>
+        </div>
+      </div>
+    </div>
+    <div class="w3-col m4 w3-margin-bottom">
+      <div class="w3-light-grey">
+        <div class="w3-container">
+          <h3>Member</h3>
+          <p class="w3-opacity">--</p>
+          <p>POOJA</p>
+        </div>
+      </div>
+    </div>
+    <div class="w3-col m4 w3-margin-bottom">
+      <div class="w3-light-grey">
+        <div class="w3-container">
+          <h3>Member</h3>
+          <p class="w3-opacity">--</p>
+          <p>PRASANNA</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+  
+  <!-- Contact -->
+  <div class="w3-container" id="contact" style="margin-top:75px">
+    <h1 class="w3-xxlarge w3-text-white"><b>Contact.</b></h1>
+    <hr style="width:50px;border:5px solid rgb(255, 255, 255)" class="w3-round">
+    <p>Need any help? or you want to give any suggestions?</p>
+    <form action="/action_page.php" target="_blank">
+      <div class="w3-section">
+        <label>Name</label>
+        <input class="w3-input w3-border" type="text" name="Name" required>
+      </div>
+      <div class="w3-section">
+        <label>Email</label>
+        <input class="w3-input w3-border" type="text" name="Email" required>
+      </div>
+      <div class="w3-section">
+        <label>Message</label>
+        <input class="w3-input w3-border" type="text" name="Message" required>
+      </div>
+      <button type="submit" class="w3-button w3-block w3-padding-large w3-black w3-margin-bottom">Send Message</button>
+    </form>  
+  </div>
+
+<!-- End page content -->
+</div>
+
+<!-- W3.CSS Container -->
+<div class="w3-light-grey w3-container w3-padding-32" style="margin-top:75px;padding-right:58px"> </div>
+
+<script>
+// Script to open and close sidebar
+function w3_open() {
+  document.getElementById("mySidebar").style.display = "block";
+  document.getElementById("myOverlay").style.display = "block";
+}
+function loginlink(){
+  window.location="/login";
+}
+function search(){
+  window.location="/search_page";
+}
+ 
+function w3_close() {
+  document.getElementById("mySidebar").style.display = "none";
+  document.getElementById("myOverlay").style.display = "none";
+}
+
+// Modal Image Gallery
+function onClick(element) {
+  document.getElementById("img01").src = element.src;
+  document.getElementById("modal01").style.display = "block";
+  var captionText = document.getElementById("caption");
+ // captionText.innerHTML = element.alt;
+}
+</script>
+
+
+
+</body>
+</html>

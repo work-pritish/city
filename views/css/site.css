@@ -1,0 +1,56 @@
+body{
+    background:url("images/back13.jpg");
+  }
+#top_header{
+  background: #fcfcfc25;
+  color:rgb(255, 250, 250);
+  font-size:50px;
+}
+#description{
+    background: #f8f4f425;
+}
+
+.slider{
+    margin-top: 100px;
+    overflow: hidden;
+    height: 500px;
+    box-shadow: 15px 15px 8px rgba(0, 0, 0, 0.541);
+    border: 5px solid white;
+}
+.slider figure div{
+    float:left;
+    width:20%;
+}
+.slider figure img{
+    width: 100%;
+    float:left;
+}
+.slider figure{
+    position: relative;
+    width: 500%;
+    margin:0px;
+    left:0;
+    animation: 20s animate infinite;
+}
+@keyframes animate{
+    0% {left:0%}
+    20% {left:0%}
+    25% {left:-100%}
+    45% {left:-100%}
+    50% {left:-200%}
+    75% {left:-200%}
+    80% {left:-300%}
+    85% {left:-300%}
+}
+
+@media (max-width:900px){
+    .slider{
+        height: 210px;
+    }
+    #top_header{
+        font-size: 30px;
+    }
+}
+#testing{
+    border: 2px solid white;
+}

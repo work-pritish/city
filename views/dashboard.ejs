@@ -1,0 +1,63 @@
+<% include partials/nav.ejs %>
+<!--SideNav Finished-->
+<div class="form_container card blue-white darken-1">
+  <table>
+    <th>S.no</th>
+    <th>address</th>
+    <th>city</th>
+    <th>operations</th>
+    <tbody>
+      <% for(var i=0; i < form.length; i++) { %>
+      <tr>
+      <td><%= i+1 %></td>
+      <td><%= form[i].address %></td>
+      <td><%= form[i].city %></td>
+      <td><button class="btn btn-edit" data-id='<%= form[i].id %>'>EDIT</button> <button class="btn btn-del" data-id='<%= form[i].id %>' >DELETE</button></td>
+    </tr>
+    <% } %>
+    </tbody>
+  </table>
+</div>
+  <!--Some Scripts-->
+  <script type="text/javascript" src="js/jquery.js"></script>
+  <script type="text/javascript" src="js/materialize.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      // Custom JS & jQuery here
+      $('.button-collapse').sideNav();
+    });
+    postrem=function(){
+      window.location="/remove_post";
+    }
+   
+   //jQuery for dash change
+    $(document).ready(() => {
+  $('.btn-edit').on('click', e => {
+    console.log("btn clicked");
+    let target = $(e.target);
+    const id = target.attr('data-id');
+    $.ajax({
+      type: 'get',
+      url: `/dash_edit/${id}`,
+      success: res => location.href =`/dash_change/${id}` 
+    });
+  });
+});
+//j Query for deleting post
+$(document).ready(() => {
+  $('.btn-del').on('click', e => {
+    let target = $(e.target);
+    const id = target.attr('data-id');
+    $.ajax({
+      type: 'DELETE',
+      url: `/rmpost/${id}`,
+      success: res => location.href =`/dashboard` 
+    });
+  });
+});
+
+  </script>
+ 
+</body>
+
+</html>

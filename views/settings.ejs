@@ -1,0 +1,94 @@
+<% include partials/nav.ejs %>
+<!--SideNav Finished-->
+<div class="form_container card blue-white darken-1">
+   <h5>SETTINGS</h5><div class="divider"></div><br><br>
+   <form id='form3' method='POST'>
+   USERNAME<input type='text'  value='<%= name %>' name='username' required>
+   EMAIL<input type='text' value='<%= email %>' id='disabled' disabled name='email'>
+   CHANGE PASSWORD<input type='password'   name='password' required>
+   CONFIRM CHANGE<input type='password'   name='passwordConf' required>
+   <button  class="btn waves-effect waves-light" type='submit' value='change'>UPDATE</button>
+   <button  data-target="modal1" class='btn modal-trigger'>DELETE</button>
+   </form><br><br>
+   <div  class="checker">
+    <span id="check"></span>
+  </div>
+  </div>
+  <div id="LangTable"><a href="/settings" id="aa"></a>
+  </div>
+</div>
+
+<!-- Modal Structure -->
+<div id="modal1" class="modal">
+  <div class="modal-content">
+    <h4>Confirmation message</h4>
+    <p>Are you sure you want to do it</p>
+  </div>
+  <div class="modal-footer">
+    <a href="#!" class="modal-close waves-effect waves-green btn">Cancel</a>
+    <a href="#!" class="btn-delete modal-close waves-effect waves-green btn" data-id='<%= id %>'>Confirm</a>
+  </div>
+</div>
+</div>
+
+
+
+  <!--Some Scripts-->
+  <script type="text/javascript" src="js/jquery.js"></script>
+  <script type="text/javascript" src="js/materialize.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      // Custom JS & jQuery here
+      $('.button-collapse').sideNav();
+    });
+
+ //jquery to delete an account
+    $(document).ready(() => {
+  $('.btn-delete').on('click', e => {
+    let target = $(e.target);
+    const id = target.attr('data-id');
+    $.ajax({
+      type: 'DELETE',
+      url: `/delete/${id}`,
+      success: res => location.href = '/logout'
+    });
+  });
+});
+
+//jquery to update an account
+$(document).ready(function(){
+$( "#form3" ).submit(function(event) {
+  event.preventDefault();
+
+  $.ajax({
+    type: 'POST',
+    url: '/update',
+    data: $('#form3').serialize(),
+    dataType: "json",
+    success: function(response){
+      //alert("a");
+      //console.log(response.Success);
+      $('#form3')[0].reset();
+      //alert("abc");
+      document.getElementById("check").innerHTML=response.Success;
+
+      setTimeout(function(){
+        document.getElementById("check").innerHTML="";
+      },30);
+      if (response.Success=="UPDATED!") {
+        document.getElementById("aa").click();
+      };
+    },
+    error: function() {
+    }
+  })
+});
+});
+$(document).ready(function(){
+    $('.modal').modal();
+  });
+  </script>
+ 
+</body>
+
+</html>
